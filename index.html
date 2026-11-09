@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAFARI SHOP - Boutique en ligne moderne et futuriste.">
+  <title>SAFARI SHOP | Boutique en ligne</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">✦ BIENVENUE CHEZ SAFARI SHOP <span>—</span> LE STYLE DE DEMAIN, DISPONIBLE AUJOURD'HUI</div>
+
+  <header class="header">
+    <a class="brand" href="#accueil"><span class="brand-mark">S</span> SAFARI<span class="brand-light">SHOP.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+    <nav id="nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-button" id="openCart">🛍 Panier <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> NOUVELLE GÉNÉRATION • NOUVEAU STYLE</div>
+        <h1>Le futur<br>vous <em>appartient.</em></h1>
+        <p>Découvrez une sélection de produits tendance et d'accessoires modernes conçus pour accompagner votre quotidien.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#boutique">Explorer la boutique ↗</a>
+          <a class="button button-ghost" href="#apropos">En savoir plus</a>
+        </div>
+        <div class="stats">
+          <div><strong>100%</strong><small>Style moderne</small></div>
+          <i></i>
+          <div><strong>24/7</strong><small>Commandes en ligne</small></div>
+          <i></i>
+          <div><strong>✦</strong><small>Esprit innovation</small></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Illustration SAFARI SHOP">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-sphere"><div class="sphere-inner"><b>SAFARI</b><span>✦</span><small>FUTURE GOODS</small></div></div>
+        <div class="floating floating-top">⚡ TECH & STYLE</div>
+        <div class="floating floating-bottom">● YOUR NEXT FAVORITE</div>
+      </div>
+      <div class="hero-foot"><span>01 / 03</span><span class="short-line"></span><span>DES PRODUITS QUI FONT LA DIFFÉRENCE</span></div>
+    </section>
+
+    <section class="benefits" id="apropos">
+      <article><span class="benefit-icon">🚚</span><div><b>Livraison à convenir</b><small>Modalités confirmées à la commande</small></div></article>
+      <article><span class="benefit-icon">🛡️</span><div><b>Commande accompagnée</b><small>Échange direct avec notre équipe</small></div></article>
+      <article><span class="benefit-icon">🎧</span><div><b>Service client</b><small>Nous sommes là pour vous aider</small></div></article>
+    </section>
+
+    <section class="shop section" id="boutique">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="dot"></span> LA SÉLECTION SAFARI</div><h2>Explorez nos <em>produits.</em></h2></div>
+        <p>Des essentiels sélectionnés pour un quotidien plus pratique et plus stylé.</p>
+      </div>
+
+      <div class="shop-controls">
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Tout">Tout</button>
+          <button class="filter" data-category="Audio">Audio</button>
+          <button class="filter" data-category="Accessoires">Accessoires</button>
+          <button class="filter" data-category="Informatique">Informatique</button>
+        </div>
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un produit..."></label>
+      </div>
+      <div class="products" id="productGrid"></div>
+    </section>
+
+    <section class="promo">
+      <div class="promo-symbol">✳</div>
+      <div><div class="eyebrow">L'EXPÉRIENCE SAFARI</div><h2>Simple. Moderne. <em>Fait pour vous.</em></h2><p>Un espace pensé pour découvrir facilement vos prochains coups de cœur.</p></div>
+      <a href="#boutique">Voir les produits ↗</a>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div><a class="brand" href="#accueil"><span class="brand-mark">S</span> SAFARI<span class="brand-light">SHOP.</span></a><p>Le style de demain, à portée de main.</p></div>
+      <div class="footer-column"><b>CONTACT</b><a href="mailto:contact@safarishop.com">contact@jefaniartssafari.com</a><span>RDC · Commandes en ligne</span></div>
+      <div class="footer-column"><b>EXPLORER</b><a href="#boutique">La boutique</a><a href="#apropos">À propos</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> SAFARI SHOP. Tous droits réservés.</span><span>CONÇU AVEC PASSION <b>✦</b></span></div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-label="Votre panier">
+      <div class="cart-heading"><div><div class="eyebrow">VOTRE SÉLECTION</div><h2>Mon panier <span id="cartTitleCount">(0)</span></h2></div><button class="close-cart" id="closeCart" aria-label="Fermer">✕</button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty"><div>🛍</div><h3>Votre panier est vide</h3><p>Ajoutez quelques produits pour commencer.</p><button class="button button-primary" id="continueShopping">Continuer mes achats</button></div>
+      <div class="cart-summary" id="cartSummary" hidden>
+        <div class="subtotal"><span>Sous-total</span><strong id="cartTotal">$0.00</strong></div>
+        <p>Les frais de livraison seront confirmés avec vous.</p>
+        <button class="button button-primary checkout" id="checkout">Commander sur WhatsApp ↗</button>
+        <small>Aucun paiement n'est prélevé sur ce site. La commande doit être confirmée avec le vendeur.</small>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
